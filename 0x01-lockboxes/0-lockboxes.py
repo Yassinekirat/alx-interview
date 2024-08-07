@@ -3,7 +3,7 @@ from typing import List
 """Lockboxes"""
 
 
-def canUnlockAll(boxes: List[List[int]]) -> bool:
+def canUnlockAll(boxes):
     """Lockboxes"""
     n: int = len(boxes)
     # Determine the number of boxes
