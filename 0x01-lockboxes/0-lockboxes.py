@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Lockboxes"""
 from typing import List
 
 
