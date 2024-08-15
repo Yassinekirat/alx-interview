@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 import sys
 import signal
 import re
@@ -16,6 +17,7 @@ status_codes_count = {
 }
 line_count = 0
 
+
 def print_statistics():
     """Print the current statistics."""
     print(f"File size: {total_size}")
@@ -23,15 +25,21 @@ def print_statistics():
         if status_codes_count[code] > 0:
             print(f"{code}: {status_codes_count[code]}")
 
+
 def signal_handler(sig, frame):
     """Handle keyboard interruption (CTRL + C)."""
     print_statistics()
     sys.exit(0)
 
+
 signal.signal(signal.SIGINT, signal_handler)
 
 regex = re.compile(
-    r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+\] "GET /projects/260 HTTP/1.1" (.{3}) (\d+)'
+    r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - '
+    r'\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+\] '
+    r'"GET /projects/260 HTTP/1.1" '
+    r'(.{3}) '
+    r'(\d+)'
 )
 
 try:
