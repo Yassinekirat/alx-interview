@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Prime Game"""
 
 def isWinner(x, nums):
     if x < 1 or not nums:
