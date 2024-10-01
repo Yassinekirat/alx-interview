@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Prime Game"""
 
+
 def isWinner(x, nums):
+    """Function to get who has won in prime game"""
     if x < 1 or not nums:
         return None
 
